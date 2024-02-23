@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/styles/styles.css">
+	<title>Jiki - Homepage</title>
+</head>
+
+<body>
+	<h1>Welcome to Jiki!</h1>
+	<p>Here are some randomly selected articles for you to click on:</p>
+	<ul>
+		<% articleList.forEach((item)=> { %>
+			<li>
+				<a href="/article/<%= item %>">
+					<%= decodeURIComponent(item) %>
+				</a>
+			</li>
+			<% }); %>
+	</ul>
+	<hr>
+
+	<p>Or perhaps you'd prefer
+		<a href="/newarticle">click here to create a new article</a>
+	</p>
+	<hr>
+
+	<form method="GET" action="/searcharticle">
+		<input type="text" id="searchterm" name="searchterm">
+		<button type="submit">Search</button>
+	</form>
+</body>
+
+</html>

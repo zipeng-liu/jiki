@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/styles/styles.css">
+	<title>Jiki - Edit Article</title>
+</head>
+
+<body>
+	<h1>Edit Article</h1>
+
+	<form action="/article/<%= articleCodeName %>/edit" method="post" name="edit-article">
+		<label for="title">Title:</label> <br>
+		<input type="text" id="title" name="title" value="<%= articleName %>"> <br>
+
+		<label for="content">Content:</label> <br>
+		<textarea id="content" name="content" rows="20" cols="30"><%= articleContents %></textarea> <br>
+
+		<button type="submit">Update Content</button>
+	</form>
+
+	<p><a href="/">Never Mind</a></p>
+</body>
+
+</html>

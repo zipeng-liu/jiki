@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/styles/styles.css">
+	<title>Jiki - <%= articleName %>
+	</title>
+</head>
+
+<body>
+	<h1>
+		<%= articleName %>
+	</h1>
+
+	<button class="button"><a href="/article/<%= articleCodeName %>/edit">Edit</a></button>
+	<button class="button"><a href="/article/<%= articleCodeName %>/delete">Delete</a></button>
+	<button class="button"><a href="/">Home</a></button>
+	<hr>
+
+	<p>
+	<p>
+		<% const contentWords=articleContents.split(" "); %>
+			<% contentWords.forEach((word) => { %>
+			  <% if (externalLinks.includes(word)) { %>
+				<a href=" <%=word %>"><%= word %></a>
+				<% } else if (wikilinks.includes(word)) { %>
+					<a href="/article/<%= word %>">
+						<%= word %>
+					</a>
+					<% } else if (nonexists.includes(word)) { %>
+						<a href="/newarticle">
+							<%= word %>
+						</a>
+						<% } else { %>
+							<%= word %>
+								<% } %>
+									<% }); %>
+	</p>
+	</p>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/styles/styles.css">
+	<title>Jiki - Search Article</title>
+</head>
+
+<body>
+	<h1>Search Results</h1>
+	<p>You searched for: <%= searchTerms %> </p>
+    
+    <% if (matchingArticles.length > 0) { %>
+        <ul>
+          <% matchingArticles.forEach((article) => { %>
+            <li>
+              <a href="/article/<%= article.code_name %>">
+                <%= article.code_name %>
+              </a>
+              - Occurrences: <%= article.occurrences %>
+            </li>
+          <% }); %>
+        </ul>
+      <% } else { %>
+        <p>No matching articles found.</p>
+      <% } %>
+      
+	<p><a href="/">Back to Home</a></p>
+</body>
+
+</html>

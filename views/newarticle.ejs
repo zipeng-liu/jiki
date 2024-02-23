@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/styles/styles.css">
+	<title>Jiki - Create New Article</title>
+</head>
+
+<body>
+	<h1>Create New Article</h1>
+
+	<form action="/newarticle" method="post" name="create-article">
+		<label for="title">Title:</label> <br>
+		<input type="text" id="title" name="title"> <br>
+
+		<label for="content">Content:</label> <br>
+		<textarea id="content" name="content" rows="20" cols="30"></textarea> <br>
+
+		<button type="submit">Create that article</button>
+	</form>
+
+	<p><a href="/">Back to Home</a></p>
+</body>
+
+</html>
